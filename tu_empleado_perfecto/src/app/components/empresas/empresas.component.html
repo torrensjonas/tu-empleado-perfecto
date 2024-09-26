@@ -1,0 +1,42 @@
+<h2>Mis Empresas</h2>
+
+<mat-card>
+  <mat-card-content>
+    <form (submit)="createEmpresa()">
+      <mat-form-field appearance="fill">
+        <input matInput placeholder="Nombre" [(ngModel)]="newEmpresa.nombre" name="nombre" required />
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <input matInput placeholder="Dirección" [(ngModel)]="newEmpresa.direccion" name="direccion" required />
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <input matInput placeholder="RUT" [(ngModel)]="newEmpresa.rut" name="rut" required />
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <input matInput placeholder="Teléfono" [(ngModel)]="newEmpresa.telefono" name="telefono" required />
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <input matInput placeholder="Correo Electrónico" [(ngModel)]="newEmpresa.email" name="email" required />
+      </mat-form-field>
+
+      <button mat-flat-button color="primary" type="submit">Agregar Empresa</button>
+    </form>
+  </mat-card-content>
+</mat-card>
+
+
+<mat-card>
+  <mat-card-content>
+    <mat-list>
+      <h2 mat-subheader>Lista de Empresas</h2>
+      <mat-list-item *ngFor="let empresa of empresas">
+        <span>{{ empresa.nombre }}</span>
+        <a mat-button [routerLink]="['/empleados', empresa.id]">Ver Empleados</a>
+      </mat-list-item>
+    </mat-list>
+  </mat-card-content>
+</mat-card>

@@ -1,0 +1,13 @@
+<mat-card>
+  <mat-card-content>
+    <mat-list>
+      <h2 mat-subheader>Lista de Empleados</h2>
+      <mat-list-item *ngFor="let empleado of empleados">
+        <strong>Empresa: </strong><span>  {{ empleado.empresa_nombre }} - </span>
+        <strong>Nombre completo: </strong><span>{{ empleado.nombre_completo }} - </span>
+        <strong>Email: </strong><span>  {{ empleado.email }} - </span>
+        <strong>Rut: </strong><span>  {{ empleado.rut }}  </span>
+      </mat-list-item>
+    </mat-list>
+  </mat-card-content>
+</mat-card>

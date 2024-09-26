@@ -1,0 +1,14 @@
+h2 {
+    color: var(--color-primary);
+    font-size: 40px;
+    font-weight: bold;
+}
+ 
+form {
+    display: flex;
+    flex-direction: column;
+}
+  
+input {
+    width: 100%;
+}

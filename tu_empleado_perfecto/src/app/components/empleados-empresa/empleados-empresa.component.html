@@ -1,0 +1,34 @@
+<h2>Empleados de {{ empleados[0]?.empresa_nombre }}</h2>
+
+<mat-card>
+  <mat-card-content>
+    <form (submit)="createEmpleado()">
+      <mat-form-field>
+        <input matInput placeholder="Nombre Completo" [(ngModel)]="newEmpleado.nombre_completo" name="nombre_completo" required />
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput placeholder="RUT" [(ngModel)]="newEmpleado.rut" name="rut" required />
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput placeholder="Correo Electrónico" [(ngModel)]="newEmpleado.email" name="email" required />
+      </mat-form-field>
+
+      <button mat-flat-button color="primary" type="submit">Agregar Empleado</button>
+    </form>
+  </mat-card-content>
+</mat-card>
+
+<mat-card>
+  <mat-card-content>
+    <mat-list>
+      <h2 mat-subheader>Lista de Empleados</h2>
+      <mat-list-item *ngFor="let empleado of empleados">
+        <strong>Nombre completo: </strong><span>{{ empleado.nombre_completo }} - </span>
+        <strong>Rut: </strong><span>  {{ empleado.rut }}  </span>
+      </mat-list-item>
+    </mat-list>
+  </mat-card-content>
+</mat-card>
+
